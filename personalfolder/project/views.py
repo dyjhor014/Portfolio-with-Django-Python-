@@ -11,9 +11,9 @@ from django.http import HttpResponse
 # Create your views here.
 class IndexView(View):
     def get(self, request):
-        project = Project.objects.all()
+        projects = Project.objects.all()
         context = {
-            "project":project
+            "projects":projects
         }
         print(context)
         return render(request, "index.html", context)
