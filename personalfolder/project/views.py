@@ -1,12 +1,8 @@
-""" from django.shortcuts import render
-
-# Create your views here.
-def index(request):
-    return render(request, "index.html") """
 from django.shortcuts import render, redirect
 from django.views import View
 from .models import Project
 from django.http import HttpResponse
+from django.views.generic import TemplateView
 
 # Create your views here.
 class IndexView(View):
@@ -18,7 +14,7 @@ class IndexView(View):
         print(context)
         return render(request, "index.html", context)
 
-class Inner(View):
+class Inner(TemplateView):
     def get(self, request):
         return render(request, "inner.html")
 
@@ -28,9 +24,12 @@ class Inner(View):
         description = request.POST['description']
         tags = request.POST['tags']
         url = request.POST['url']
-        print(title)
         if not photo == '' and not photo == None:
             project = Project(photo=photo, title=title, description=description, url=url, tags=tags)
             project.save()
             return redirect("index")
         return HttpResponse("No se han insertado datos")
+
+class Login(View):
+    def get(self, request):
+        return render(request, "login.html")

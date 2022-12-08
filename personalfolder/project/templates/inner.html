@@ -7,7 +7,7 @@
     <div class="container">
 
       <div class="d-flex justify-content-between align-items-center">
-        <h2>Página de inserción de datos</h2>
+        <h2>Página de inserción de datos - Portafolio</h2>
         <ol>
           <li><a href="index.html">home</a></li>
           <li>inner</li>
@@ -24,7 +24,7 @@
         {% csrf_token %}
         <div class="col-12">
           <label for="inputAddress" class="form-label">Foto</label>
-          <input type="text" class="form-control" id="photo" name="photo" placeholder="Ingresa url de la imagen" required autocomplete="off">
+          <input type="url" class="form-control" id="photo" name="photo" placeholder="Ingresa url de la imagen" required autocomplete="off">
         </div>
         <div class="col-12">
           <label for="inputAddress" class="form-label">Titulo del proyecto</label>
@@ -40,7 +40,7 @@
         </div>
         <div class="col-12">
           <label for="inputAddress" class="form-label">URL Github</label>
-          <input type="text" class="form-control" id="url" name="url" placeholder="Ingresa url del proyecto en github" required autocomplete="off">
+          <input type="url" class="form-control" id="url" name="url" placeholder="Ingresa url del proyecto en github" required autocomplete="off">
         </div>
         <div class="col-12">
           <button type="submit" class="btn btn-primary">Agregar</button>
